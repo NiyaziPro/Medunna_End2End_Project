@@ -25,7 +25,7 @@ public class Room {
     private boolean status;
 
     @Column(name = "price")
-    private Double price;
+    private String price;
 
     @Column(name = "description")
     private String description;
@@ -33,7 +33,7 @@ public class Room {
     public Room() {
     }
 
-    public Room(int id, Integer roomNumber, String roomType, boolean status, Double price, String description) {
+    public Room(int id, Integer roomNumber, String roomType, boolean status, String price, String description) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
@@ -74,11 +74,11 @@ public class Room {
         this.status = status;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

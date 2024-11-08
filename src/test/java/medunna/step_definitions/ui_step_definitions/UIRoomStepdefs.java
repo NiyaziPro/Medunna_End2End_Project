@@ -2,9 +2,9 @@ package medunna.step_definitions.ui_step_definitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
+
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 import org.junit.Assert;
 import medunna.pages.MedunnaPage;
 import medunna.utilities.*;
