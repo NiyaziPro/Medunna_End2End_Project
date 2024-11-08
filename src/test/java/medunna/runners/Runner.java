@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"medunna/step_definitions", "medunna/hooks"},
-        tags = " @dbt",
+        tags = " @room",
         dryRun = false
 )
 public class Runner {}

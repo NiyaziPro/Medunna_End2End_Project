@@ -16,10 +16,16 @@ public class Room {
     private int id;
 
     @Column(name = "room_number") // Örneğin bir isim sütunu varsa
-    private String roomNumber;
+    private Integer roomNumber;
+
+    @Column(name = "room_type")
+    private String roomType;
+
+    @Column(name = "status")
+    private boolean status;
 
     @Column(name = "price")
-    private String price;
+    private Double price;
 
     @Column(name = "description")
     private String description;
@@ -27,9 +33,11 @@ public class Room {
     public Room() {
     }
 
-    public Room(int id, String roomNumber, String price, String description) {
+    public Room(int id, Integer roomNumber, String roomType, boolean status, Double price, String description) {
         this.id = id;
         this.roomNumber = roomNumber;
+        this.roomType = roomType;
+        this.status = status;
         this.price = price;
         this.description = description;
     }
@@ -42,19 +50,35 @@ public class Room {
         this.id = id;
     }
 
-    public String getRoomNumber() {
+    public Integer getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(String roomNumber) {
+    public void setRoomNumber(Integer roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public String getPrice() {
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -70,8 +94,10 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "id=" + id +
-                ", roomNumber='" + roomNumber + '\'' +
-                ", price='" + price + '\'' +
+                ", roomNumber=" + roomNumber +
+                ", roomType='" + roomType + '\'' +
+                ", status=" + status +
+                ", price=" + price +
                 ", description='" + description + '\'' +
                 '}';
     }
