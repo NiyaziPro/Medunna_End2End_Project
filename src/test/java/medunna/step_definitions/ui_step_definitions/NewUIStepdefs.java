@@ -15,6 +15,12 @@ public class NewUIStepdefs {
     HomePage homePage = new HomePage();
     TestItemPage testItemPage = new TestItemPage();
 
+    public static String exPectedName;
+    public static String expectedDescription;
+    public static String expectedPrice;
+    public static String expectedMinValue;
+    public static String expectedMaxValue;
+
     @Given("the user logs into the {string} page as admin")
     public void theUserLogsIntoThePageAs(String url) {
         Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
@@ -43,6 +49,11 @@ public class NewUIStepdefs {
     @And("Test Item is created with the following data: name {string}, description {string}, price {string} , minValue {string}, maxValue {string}")
     public void testItemIsCreatedWithTheFollowingDataNameDescriptionPriceMinValueMaxValue(String name, String description, String price, String minValue, String maxValue) {
         testItemPage.enterTestItemInfo(name,description,price,minValue,maxValue);
+        exPectedName=name;
+        expectedDescription=description;
+        expectedPrice = price;
+        expectedMinValue = minValue;
+        expectedMaxValue = maxValue;
         testItemPage.clickOnSaveButton();
 
     }

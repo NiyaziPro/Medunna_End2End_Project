@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" >
+
+<hibernate-configuration>
+    <session-factory>
+        <!--specifies which database driver your project will use.
+        The database driver allows the Java application to communicate with the database. -->
+
+        <!-- properties -->
+
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+        <property name="connection.url">jdbc:postgresql://medunna.com:5432/medunna_db_v2</property>
+
+        <property name="connection.username">select_user</property>
+
+        <property name="connection.password">Medunna_pass_@6</property>
+
+        <!-- It allows Hibernate to generate SQL queries for the specified DB. -->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+
+        <!--The hibernate.hbm2ddl.auto configuration property in Hibernate (or Spring)
+        controls how the database schema is generated or updated based on your entity mappings.
+        It has several options:
+        none: No schema generation.
+        validate: Validate the schema against the entity mappings but make no changes.
+        update: Updates the schema, adding new fields or tables without dropping anything.
+        create: Drops and recreates the entire schema every time the application starts.
+        create-drop: Same as create, but also drops the schema when the session ends.-->
+        <property name="hbm2ddl.auto">update</property>
+
+        <property name="show_sql">true</property>
+
+        <property name="format_sql">true</property>
+
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <!-- org.hibernate.cache.jcache.internal.JCacheRegionFactory-->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory
+        </property>
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+
+        <property name="format_sql">true</property>
+    </session-factory>
+</hibernate-configuration>

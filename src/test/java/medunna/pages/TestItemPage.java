@@ -80,6 +80,7 @@ public class TestItemPage {
     }
 
     public void enterTestItemInfoWithFaker(){
+
         waitFor(1);
         enterName(faker.medical().medicineName());
         waitFor(1);
@@ -90,7 +91,9 @@ public class TestItemPage {
         enterDefaultValMin(faker.number().numberBetween(10,50)+"");
         waitFor(1);
         enterDefaultValMax(faker.number().numberBetween(10,50)+"");
+
     }
+
 
 
 

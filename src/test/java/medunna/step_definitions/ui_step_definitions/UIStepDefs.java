@@ -115,4 +115,7 @@ public class UIStepDefs {
     public void closesTheApplication() {
         Driver.closeDriver();
     }
+
+
+
 }

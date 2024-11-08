@@ -8,7 +8,7 @@ Feature: Creating a Test Item on Medunna
     Then Verifies that the Test Item has been created and displays the message "A new Test Item is created"
     And closes the application
 
-  @ui2
+  @dbt
   Scenario: TC02 - Positive Scenario
     Given the user logs into the "https://medunna.com" page as admin
     And Goes to the Test Item page from Items&Titles and clicks Create new Test Item
