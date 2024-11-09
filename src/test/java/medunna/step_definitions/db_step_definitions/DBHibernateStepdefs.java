@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 public class DBHibernateStepdefs {
     Configuration configuration;
     SessionFactory sessionFactory;
-    Session session;
+    public static Session session;
     Transaction transaction;
     Room room;
     TestItem testItem;

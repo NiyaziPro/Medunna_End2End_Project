@@ -1,10 +1,8 @@
 package medunna.hibernate;
 
 import javax.annotation.concurrent.Immutable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Immutable // Bu anotasyon tabloyu salt okunur yapar
@@ -12,6 +10,7 @@ import javax.persistence.Table;
 public class Room {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id") // ID sütunu adı (genellikle primary key)
     private int id;
 
@@ -25,7 +24,7 @@ public class Room {
     private boolean status;
 
     @Column(name = "price")
-    private String price;
+    private Integer price;
 
     @Column(name = "description")
     private String description;
@@ -33,8 +32,7 @@ public class Room {
     public Room() {
     }
 
-    public Room(int id, Integer roomNumber, String roomType, boolean status, String price, String description) {
-        this.id = id;
+    public Room( Integer roomNumber, String roomType, boolean status, Integer price, String description) {
         this.roomNumber = roomNumber;
         this.roomType = roomType;
         this.status = status;
@@ -74,11 +72,11 @@ public class Room {
         this.status = status;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

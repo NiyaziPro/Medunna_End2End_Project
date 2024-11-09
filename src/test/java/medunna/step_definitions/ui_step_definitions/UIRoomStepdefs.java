@@ -13,7 +13,7 @@ public class UIRoomStepdefs {
 
     public static int roomNumber;
     public static String expectedRoomDescription;
-    public static String expectedRoomPrice;
+    public static Integer expectedRoomPrice;
     MedunnaPage medunnaPage = new MedunnaPage();
 
     @And("clicks on the room option")
@@ -45,8 +45,9 @@ public class UIRoomStepdefs {
 
     @And("enters {string} in the Price field")
     public void entersInThePriceField(String price) {
+
         medunnaPage.priceInput.sendKeys(price);
-        expectedRoomPrice =price;
+        expectedRoomPrice = Integer.valueOf(price);
 
     }
 

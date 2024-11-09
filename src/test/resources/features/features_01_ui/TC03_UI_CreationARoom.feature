@@ -21,7 +21,7 @@ Feature: TC01 UI Creating a room on medunna
     And closes the application
     Examples:
       | price  | description                         |
-      | 170.00 | End To End Testing - Mini Project   |
+      | 170 | End To End Testing - Mini Project   |
 
 
 
